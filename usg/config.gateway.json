@@ -1,0 +1,58 @@
+{
+  "firewall": {
+    "name": {
+      "LAN_IN": {
+        "rule": {
+          "2000": {
+            "description": "Block Internet Access between 21h and 8h",
+            "time": {
+              "starttime": "21:00:00",
+              "stoptime": "08:00:00"
+            }
+          }
+        }
+      }
+    }
+  },
+  "service": {
+    "webproxy": {
+      "cache-size": "0",
+      "default-port": "3128",
+      "enable-access-log": "''",
+      "listen-address": {
+        "192.168.1.10": "''"
+      },
+      "mem-cache-size": "10",
+      "url-filtering": {
+              "squidguard": {
+                      "auto-update": {
+                              "update-hour": "2"
+                      },
+                      "block-category": [
+                              "aggressive",
+                              "agressif",
+                              "cryptojacking",
+                              "dangerous_material",
+                              "ddos",
+                              "drugs",
+                              "hacking",
+                              "malware",
+                              "marketingware",
+                              "phishing",
+                              "porn",
+                              "proxy",
+                              "redirector",
+                              "remote-control",
+                              "violence",
+                              "warez"
+                      ],
+                      "default-action": "allow",
+                      "local-block": [
+                      ],
+                      "redirect-url": "http://www.google.com"
+              }
+      }
+    }
+   }
+}
+
